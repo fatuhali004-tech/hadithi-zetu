@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hadithi Zetu — discover, share and preserve cultural stories.">
+  <title>Hadithi Zetu | Stories that connect us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement"><span class="dot"></span> A home for the stories that shape who we are</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Hadithi Zetu home">
+      <span class="brand-mark">HZ</span><span>hadithi<span class="brand-accent">zetu</span><small>OUR STORIES. OUR HERITAGE.</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="#stories">Explore stories</a>
+      <a href="#communities">Communities</a>
+      <a href="#quiz">Knowledge quiz</a>
+      <a href="#think">Think critically</a>
+      <a href="#about">Our purpose</a>
+    </nav>
+    <button class="button button-dark nav-submit" data-open="submitModal">＋ Share a story</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow light">CULTURE LIVES IN EVERY STORY</p>
+        <h1>Every story has<br><em>a place here.</em></h1>
+        <p class="hero-copy">Travel through the wisdom, traditions and imagination carried across generations. Discover a story. Share what you know. Keep our heritage alive.</p>
+        <div class="hero-actions">
+          <a class="button button-cream" href="#stories">Explore stories <span>↗</span></a>
+          <button class="button button-outline-light" data-open="submitModal">Share your story</button>
+        </div>
+        <div class="hero-note"><span class="avatar-stack"><i>✦</i><i>◉</i><i>✺</i></span><span>Rooted in community. Passed on with care.</span></div>
+      </div>
+      <div class="hero-image-wrap">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=85" alt="Golden African savannah landscape at sunset">
+        <div class="image-caption"><span class="caption-icon">✳</span><span><b>Our heritage,</b><br>one story at a time.</span></div>
+      </div>
+      <div class="hero-stamp">JAMII<br>NA HADITHI</div>
+    </section>
+
+    <section class="intro-strip">
+      <div><span class="strip-number">01</span><span>DISCOVER</span></div>
+      <div><span class="strip-number">02</span><span>LEARN</span></div>
+      <div><span class="strip-number">03</span><span>SHARE</span></div>
+      <p>Culture is not only what we remember.<br><b>It is what we pass on.</b></p>
+    </section>
+
+    <section class="section communities-section" id="communities">
+      <div class="section-heading">
+        <div><p class="eyebrow">A TAPESTRY OF CULTURES</p><h2>Explore by <em>community.</em></h2></div>
+        <p class="section-side-copy">Every community holds a world of knowledge. Choose a collection to begin exploring.</p>
+      </div>
+      <div class="community-grid">
+        <button class="community-card community-mijikenda" data-community="Mijikenda"><span class="community-count">COLLECTION 01</span><span class="community-name">Mijikenda</span><span class="community-link">Explore collection ↗</span></button>
+        <button class="community-card community-maasai" data-community="Maasai"><span class="community-count">COLLECTION 02</span><span class="community-name">Maasai</span><span class="community-link">Explore collection ↗</span></button>
+        <button class="community-card community-luo" data-community="Luo"><span class="community-count">COLLECTION 03</span><span class="community-name">Luo</span><span class="community-link">Explore collection ↗</span></button>
+        <button class="community-card community-kalenjin" data-community="Kalenjin"><span class="community-count">COLLECTION 04</span><span class="community-name">Kalenjin</span><span class="community-link">Explore collection ↗</span></button>
+        <button class="community-card community-kikuyu" data-community="Kikuyu"><span class="community-count">COLLECTION 05</span><span class="community-name">Kikuyu</span><span class="community-link">Explore collection ↗</span></button>
+      </div>
+      <p class="small-note">These are starter collection labels. Add or refine community collections with guidance from knowledgeable community members.</p>
+    </section>
+
+    <section class="section stories-section" id="stories">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE STORY LIBRARY</p><h2>Find a story that <em>speaks to you.</em></h2></div>
+        <a class="text-link" href="#stories">Browse the library ↓</a>
+      </div>
+      <div class="filter-bar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search stories, themes or communities..." aria-label="Search stories"></label>
+        <select id="communityFilter" aria-label="Filter by community"><option value="All">All communities</option><option>Kikuyu</option><option>Luo</option><option>Maasai</option><option>Mijikenda</option><option>Kalenjin</option></select>
+        <select id="categoryFilter" aria-label="Filter by story type"><option value="All">All story types</option><option>Folktale</option><option>Legend</option><option>Wisdom</option><option>Tradition</option></select>
+      </div>
+      <div class="story-grid" id="storyGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState">No stories match your search. Try another keyword or filter.</div>
+    </section>
+
+    <section class="feature-band">
+      <div class="feature-image">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=85" alt="Wide view of an African landscape">
+        <span class="photo-label">A LIVING HERITAGE</span>
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow light">MORE THAN WORDS</p>
+        <h2>Listen closely.<br><em>Wisdom travels.</em></h2>
+        <p>Stories carry values, memories, humour and lessons. Take your time with each one, reflect on its meaning, and add your voice to the conversation.</p>
+        <a class="button button-cream" href="#quiz">Test what you've learned ↗</a>
+      </div>
+    </section>
+
+    <section class="section quiz-section" id="quiz">
+      <div class="quiz-intro"><p class="eyebrow">LEARN AS YOU EXPLORE</p><h2>A little curiosity<br><em>goes a long way.</em></h2><p>Try this short cultural storytelling quiz. You will get immediate feedback and an explanation after each answer.</p></div>
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-top"><span>THE HADITHI CHALLENGE</span><span id="quizProgress">QUESTION 1 / 3</span></div>
+        <div class="progress-track"><span id="quizProgressBar"></span></div>
+        <h3 id="quizQuestion"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+        <button class="button button-dark quiz-next hidden" id="quizNext">Next question →</button>
+        <div class="quiz-result hidden" id="quizResult"></div>
+      </div>
+    </section>
+
+
+    <section class="section reflection-section" id="think">
+      <div class="section-heading">
+        <div><p class="eyebrow">THINK BEYOND WHAT YOU KNOW</p><h2>Every story deserves <em>context.</em></h2></div>
+        <p class="section-side-copy">A story can be meaningful while still representing one perspective. Explore thoughtfully and make room for different voices.</p>
+      </div>
+      <div class="reflection-grid">
+        <article class="reflection-card"><span>01</span><h3>Notice your first impression</h3><p>Ask yourself what you already believe about a community or tradition before reading. Be willing to question assumptions.</p></article>
+        <article class="reflection-card"><span>02</span><h3>Look for another perspective</h3><p>Compare accounts from different contributors and generations. Avoid treating one story as the experience of an entire community.</p></article>
+        <article class="reflection-card"><span>03</span><h3>Check the source and context</h3><p>Look for the storyteller, date, language and community review. If these details are missing, treat the content as unverified.</p></article>
+      </div>
+      <p class="reflection-note"><b>Our promise:</b> Hadithi Zetu aims to reduce confirmation bias by inviting respectful questions, multiple perspectives and source checking—not by telling users what to believe.</p>
+    </section>
+
+    <section class="community-cta">
+      <div class="cta-pattern">✳</div><div><p class="eyebrow light">YOUR VOICE MATTERS</p><h2>Have a story to tell?</h2><p>Help keep knowledge moving from one generation to the next. Share a story, memory or tradition for review by the site team.</p></div>
+      <button class="button button-cream" data-open="submitModal">Contribute a story ↗</button>
+    </section>
+
+    <section class="section feedback-section" id="about">
+      <div class="section-heading"><div><p class="eyebrow">BUILT AROUND PEOPLE</p><h2>Help us make this space <em>better.</em></h2></div><p class="section-side-copy">Your feedback helps us make Hadithi Zetu easier and more meaningful to use.</p></div>
+      <form id="feedbackForm" class="feedback-form">
+        <div class="form-field"><label for="feedbackName">Your name (optional)</label><input id="feedbackName" name="name" placeholder="What should we call you?"></div>
+        <div class="form-field"><label for="feedbackRating">How was your experience?</label><select id="feedbackRating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★ — Good</option><option value="3">★★★ — Average</option><option value="2">★★ — Needs improvement</option><option value="1">★ — Poor</option></select></div>
+        <div class="form-field full"><label for="feedbackMessage">What did you enjoy, or what can we improve?</label><textarea id="feedbackMessage" rows="3" required placeholder="Share your thoughts..."></textarea></div>
+        <div class="form-submit"><button class="button button-dark" type="submit">Send feedback ↗</button><span id="feedbackStatus" class="form-status" aria-live="polite"></span></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand brand-footer" href="#home"><span class="brand-mark">HZ</span><span>hadithi<span class="brand-accent">zetu</span><small>OUR STORIES. OUR HERITAGE.</small></span></a>
+    <p>Made with respect for the voices that keep culture alive.</p>
+    <span>© <span id="year"></span> Hadithi Zetu · Student prototype</span>
+  </footer>
+
+  <div class="modal-backdrop hidden" id="storyModal" role="dialog" aria-modal="true" aria-labelledby="modalStoryTitle">
+    <article class="story-modal">
+      <button class="modal-close" data-close aria-label="Close story">×</button>
+      <img id="modalStoryImage" src="" alt="">
+      <div class="modal-story-body">
+        <p class="eyebrow" id="modalStoryMeta"></p><h2 id="modalStoryTitle"></h2>
+        <p class="story-disclaimer">Prototype note: this sample narrative is illustrative, not a verified traditional account. Replace it with a community-reviewed story and source before public use.</p>
+        <div class="story-toolbar"><button id="listenButton" class="tool-button">▶ Listen to story</button><button id="stopListenButton" class="tool-button">■ Stop audio</button><button id="saveStoryButton" class="tool-button">♡ Save story</button></div>
+        <div id="modalStoryText" class="story-reading"></div>
+        <div class="moral-box"><span>✳ THE TAKEAWAY</span><p id="modalMoral"></p></div>
+        <div class="story-rating"><b>Rate this story</b><div id="ratingStars" class="rating-stars" aria-label="Rate this story"></div><span id="ratingStatus"></span></div>
+        <div class="comment-area"><h3>Join the conversation</h3><div id="commentList"></div><form id="commentForm"><input id="commentName" placeholder="Your name" aria-label="Your name" required><textarea id="commentText" placeholder="Share a respectful thought..." rows="2" required></textarea><button class="button button-dark" type="submit">Post comment</button></form></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal-backdrop hidden" id="submitModal" role="dialog" aria-modal="true" aria-labelledby="submitTitle">
+    <article class="form-modal">
+      <button class="modal-close" data-close aria-label="Close form">×</button>
+      <p class="eyebrow">ADD YOUR VOICE</p><h2 id="submitTitle">Share a cultural story.</h2>
+      <p class="modal-intro">Tell us about a story, proverb, memory or tradition. Submissions are saved as pending review in this demo and are not published automatically.</p>
+      <form id="submitStoryForm">
+        <div class="form-field"><label for="submitterName">Your name</label><input id="submitterName" required placeholder="Name or preferred credit"></div>
+        <div class="form-row"><div class="form-field"><label for="submitCommunity">Community</label><input id="submitCommunity" required placeholder="e.g. Luo"></div><div class="form-field"><label for="submitCategory">Story type</label><select id="submitCategory"><option>Folktale</option><option>Legend</option><option>Wisdom</option><option>Tradition</option></select></div></div>
+        <div class="form-field"><label for="submitTitleInput">Story title</label><input id="submitTitleInput" required placeholder="Give your story a title"></div>
+        <div class="form-field"><label for="submitStoryText">Your story and its source</label><textarea id="submitStoryText" rows="5" required placeholder="Write the story. Include who shared it with you or where it comes from, if known."></textarea></div>
+        <label class="consent-check"><input type="checkbox" required> I have permission to share this content and understand it will be reviewed before publication.</label>
+        <button class="button button-dark" type="submit">Submit for review ↗</button><p id="submitStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </article>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
